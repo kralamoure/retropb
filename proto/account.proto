@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package kralamoure.retro;
 
-option go_package = "github.com/kralamoure/retropb";
+option go_package = "github.com/kralamoure/retropb/gen/go/retropb";
 
 import "google/protobuf/timestamp.proto";
 

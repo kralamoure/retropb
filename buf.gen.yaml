@@ -1,5 +1,5 @@
 version: v1
 plugins:
   - name: go
-    out: .
+    out: gen/go/retropb
     opt: paths=source_relative

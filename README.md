@@ -1,3 +1,11 @@
 # retropb
 
-`retropb` is a generated Go package to work with Protobuf messages for Dofus Retro.
+`retropb` contains Protobuf definitions for Dofus Retro.
+
+## Usage
+
+### Go
+
+```sh
+go get -u github.com/kralamoure/retropb/gen/go/retropb
+```
