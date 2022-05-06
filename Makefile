@@ -1,4 +1,6 @@
 .PHONY: all
-all:
-	#protoc --proto_path=proto --go_out=. --go_opt=paths=source_relative $$(find proto -type f -iname "*.proto")
+all: generate
+
+.PHONY: generate
+generate:
 	buf generate proto
