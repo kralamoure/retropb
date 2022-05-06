@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package kralamoure.retro;
+
+option go_package = "github.com/kralamoure/retropb";
+
+import "google/protobuf/timestamp.proto";
+
+// From client
+
+message AccountVersion {
+    sint32 major = 1;
+    sint32 minor = 2;
+    sint32 patch = 3;
+    sint32 beta = 4;
+    bool streaming = 5;
+    bool electron = 6;
+}
+
+message AccountCredential {
+    string username = 1;
+    string hash = 2;
+    sint32 crypto_method = 3;
+}
+
+message AccountSearchForFriend {
+    string nickname = 1;
+}
+
+message AccountQueuePosition {}
+
+message AccountGetServersList {}
+
+message AccountSetServer {
+    sint32 id = 1;
+}
+
+// From server
+
+message AccountNewQueue {
+    sint32 position = 1;
+    sint32 subscribers = 2;
+    sint32 non_subscribers = 3;
+    bool subscriber = 4;
+    sint32 queue_id = 5;
+}
+
+message AccountFriendServerList {
+    repeated AccountServersListServerCharacters server_characters = 1;
+}
+
+message AccountServersListSuccess {
+    google.protobuf.Timestamp subscription = 1;
+    repeated AccountServersListServerCharacters server_characters = 2;
+
+}
+
+message AccountSelectServerPlainSuccess {
+    string host = 1;
+    string port = 2;
+    string ticket_id = 3;
+}
+
+// Subtypes
+
+message AccountServersListServerCharacters {
+    sint32 id = 1;
+    sint32 quantity = 2;
+}
