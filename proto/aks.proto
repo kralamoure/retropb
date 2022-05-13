@@ -7,3 +7,9 @@ option go_package = "github.com/kralamoure/retropb/gen/go/retropb";
 // From client
 
 message AksPing {}
+
+// From server
+
+message AksHelloConnect {
+    string salt = 1;
+}
